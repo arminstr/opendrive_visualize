@@ -11,7 +11,7 @@ int main( int argc, char** argv )
 {
   ros::init(argc, argv, "visualize_lanes");
   ros::NodeHandle n;
-  ros::Publisher marker_pub = n.advertise<visualization_msgs::MarkerArray>("lane_marker_array", 10);
+  ros::Publisher marker_pub = n.advertise<visualization_msgs::MarkerArray>("map_marker_array", 10);
   // currently publishes every 10 seconds
   ros::Rate r(0.1);
   ros::NodeHandle nh;
@@ -59,7 +59,7 @@ int main( int argc, char** argv )
       visualization_msgs::Marker lineStripMain;
       lineStripMain.header.frame_id = "map";
       lineStripMain.header.stamp = ros::Time::now();
-      lineStripMain.ns = "opendrive_visualize";
+      lineStripMain.ns = "map_visualize";
       lineStripMain.action = visualization_msgs::Marker::ADD;
       lineStripMain.pose.orientation.w = 1.0;
       lineStripMain.id = i;
@@ -108,7 +108,7 @@ int main( int argc, char** argv )
       visualization_msgs::Marker lineStripWidth;
       lineStripWidth.header.frame_id = "map";
       lineStripWidth.header.stamp = ros::Time::now();
-      lineStripWidth.ns = "opendrive_visualize";
+      lineStripWidth.ns = "map_visualize";
       lineStripWidth.action = visualization_msgs::Marker::ADD;
       lineStripWidth.pose.orientation.w = 1.0;
       lineStripWidth.id = i;
