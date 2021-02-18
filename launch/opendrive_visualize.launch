@@ -1,0 +1,4 @@
+<launch>
+    <rosparam file="$(find opendrive_visualize)/config/params.yaml" />
+    <node pkg="opendrive_visualize" type="opendrive_visualize_node" name="opendrive_visualize" output="screen" />
+</launch>
